@@ -1,0 +1,2 @@
+python -m venv ambiente
+pip install django mysqlclient djangorestframework
