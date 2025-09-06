@@ -7,4 +7,4 @@ pip install django mysqlclient djangorestframework
 
 SQL:
 
-CREATE DATABASE ev1-backend;
+CREATE DATABASE `ev1-backend`;
