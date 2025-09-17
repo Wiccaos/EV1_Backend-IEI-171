@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'drf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ev1-backend',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'POST': '3306',
+        'NAME': 'biblioteca',
+        'USER': 'miusuario',
+        'PASSWORD': 'mipassword',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 

@@ -1,0 +1,29 @@
+{
+  "name": "django-mysql-codespace",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+  "features": {
+    "ghcr.io/devcontainers/features/mysql:1": {
+      "version": "8.0",
+      "mysqlDatabase": "biblioteca",
+      "mysqlUser": "miusuario",
+      "mysqlPassword": "mipassword"
+    }
+  },
+
+  "postCreateCommand": "pip install -r requirements.txt",
+
+  "forwardPorts": [8000, 3306],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "batisteo.vscode-django"
+      ]
+    }
+  },
+
+  "remoteUser": "vscode"
+}
