@@ -20,6 +20,6 @@ from biblioteca import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Pag_inicio, name='home'),
+    path('', views.pag_inicio, name='home'),
     path('biblioteca/', include('biblioteca.urls')),
 ]
