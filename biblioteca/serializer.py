@@ -9,7 +9,7 @@ class NacionalidadSerializer(serializers.ModelSerializer):
 
 
 class AutorSerializer(serializers.ModelSerializer):
-    id_nacionalidad = NacionalidadSerializer()
+    # id_nacionalidad = NacionalidadSerializer()
     class Meta:
         model = Autor
         fields = '__all__'
@@ -22,7 +22,7 @@ class ComunaSerializer(serializers.ModelSerializer):
 
 
 class DireccionSerializer(serializers.ModelSerializer):
-    id_comuna = ComunaSerializer()
+    # id_comuna = ComunaSerializer()
     class Meta:
         model = Direccion
         fields = '__all__'
