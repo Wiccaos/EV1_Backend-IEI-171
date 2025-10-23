@@ -2,16 +2,14 @@ CMD:
 
 python -m venv ambiente
 
-pip install django mysqlclient djangorestframework
+pip install -r requirements.txt
 
 
 SQL:
 
-CREATE DATABASE 'ev1-backend';
+CREATE DATABASE biblioteca-backend;
 
 
 CMD:
-
-python manage.py migrate
 
 python manage.py createsuperuser
