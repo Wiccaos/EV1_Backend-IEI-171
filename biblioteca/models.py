@@ -12,6 +12,9 @@ class Nacionalidad(models.Model):
     created_at = models.DateTimeField(default=ahora)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.nacionalidad
+
 
 class Autor(models.Model):
     id_nacionalidad = models.ForeignKey(
@@ -22,12 +25,21 @@ class Autor(models.Model):
     created_at = models.DateTimeField(default=ahora)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        if self.pseudonimo != '':
+            return self.pseudonimo
+        else:
+            return self.nombre
+
 
 class Comuna(models.Model):
     codigo_comuna = models.CharField(max_length=5, null=False)
     nombre_comuna = models.CharField(max_length=50, null=False)
     created_at = models.DateTimeField(default=ahora)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.nombre_comuna
 
 
 class Direccion(models.Model):
@@ -39,6 +51,9 @@ class Direccion(models.Model):
     created_at = models.DateTimeField(default=ahora)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f'Comuna: {self.id_comuna}, Calle: {self.calle} N°: {self.numero}'
+
 
 class Biblioteca(models.Model):
     id_direccion = models.ForeignKey(
@@ -48,6 +63,9 @@ class Biblioteca(models.Model):
     habilitado = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=ahora)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.nombre_biblioteca
 
 
 class Lector(models.Model):
@@ -63,12 +81,18 @@ class Lector(models.Model):
     created_at = models.DateTimeField(default=ahora)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.nombre_lector
+
 
 class TipoCategoria(models.Model):
     tipo_categoria = models.CharField(max_length=50, null=False)
     habilitado = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=ahora)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.tipo_categoria
 
 
 class Categoria(models.Model):
@@ -79,6 +103,9 @@ class Categoria(models.Model):
     habilitado = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=ahora)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.categoria
 
 
 class Libro(models.Model):
@@ -95,6 +122,9 @@ class Libro(models.Model):
     habilitado = models.BooleanField(default=True)
     created_at = models.DateTimeField(default=ahora)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.titulo}, De: {self.id_autor}'
 
 
 class Prestamo(models.Model):
