@@ -173,14 +173,6 @@ class LibroSerializer(serializers.ModelSerializer):
     id_categoria = serializers.PrimaryKeyRelatedField(
         queryset=Categoria.objects.all()
     )
-    
-    autor = serializers.StringRelatedField(
-        source='id_autor', read_only=True)
-    id_autor = serializers.PrimaryKeyRelatedField(
-        queryset=Autor.objects.all()
-    )
-
-
 
     class Meta:
         model = Libro
@@ -195,8 +187,6 @@ class LibroSerializer(serializers.ModelSerializer):
             'biblioteca',
             'id_categoria',
             'categoria',
-            'id_autor',
-            'autor',
         ]
 
 

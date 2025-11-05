@@ -36,7 +36,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.pag_inicio, name='home'),
+    path('', views.pagina_inicio, name='home'),
 
     # URLs aplicación
     path('biblioteca/', include('biblioteca.urls')),
@@ -45,10 +45,9 @@ urlpatterns = [
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
-    #URLs de autenticación
-        # URL's de autenticación
+    # URL's de autenticación
     path('accounts/', include('django.contrib.auth.urls')),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    #path('registro/', views.registro, name='registro'),
+    path('registro/', views.registro, name='registro'),
 ]

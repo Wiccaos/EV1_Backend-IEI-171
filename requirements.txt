@@ -1,7 +1,8 @@
 asgiref==3.9.1
 beautifulsoup4==4.14.2
-Django==4.2.25
+Django==5.2.7
 django-bootstrap-v5==1.0.11
+django-filter==25.2
 djangorestframework==3.16.1
 drf-yasg==1.21.11
 iconic==1.0.0
@@ -11,6 +12,7 @@ packaging==25.0
 python-decouple==3.8
 pytz==2025.2
 PyYAML==6.0.3
+rut-chile==2.0.1
 soupsieve==2.8
 sqlparse==0.5.3
 typing_extensions==4.15.0
