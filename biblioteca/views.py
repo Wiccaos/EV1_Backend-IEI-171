@@ -34,7 +34,7 @@ def registro(request):
                 request, "No ha sido posible Registrarlo. Por favor revise el formulario por errores.")
     else:
         form = UserCreationForm()
-    return render(request, 'registro.html', {'form': form})
+    return render(request, 'registration/registro.html', {'form': form})
 
 
 @login_required

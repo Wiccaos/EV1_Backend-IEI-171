@@ -1,33 +1,44 @@
 {% extends 'plantilla_base.html' %}
 {% load static %}
 
-{% block title %}Iniciar Sesión{% endblock %}
+{% block title %}Dashboard Principal{% endblock %}
 
 {% block content %}
-    <div class="form-container">
-        <h2>Iniciar Sesión</h2>
+    <!-- 1. Caja de Bienvenida -->
+    <!-- Usamos la clase 'welcome-box' que ya definiste en tu styles.css -->
+    <div class="welcome-box">
+        <h2>¡Bienvenido al Dashboard, {{ user.username }}!</h2>
+        <p class="welcome-subtext">Panel de administración de la Biblioteca.</p>
+        <div class="welcome-action">
+            <!-- Enlazamos al admin de Django y a la documentación de Swagger -->
+            <a href="{% url 'admin:index' %}" class="btn btn-large">
+                Admin Django
+            </a>
+            <a href="{% url 'schema-swagger-ui' %}" class="btn btn-secondary btn-large">
+                Documentación API (Swagger)
+            </a>
+        </div>
+    </div>
 
-        {% if form.errors %}
-            <p class="error-message">Tu nombre de usuario y contraseña no coinciden. Inténtalo de nuevo.</p>
-        {% endif %}
-
-        <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
+    <!-- 2. Sección de Accesos Directos a la API -->
+    <!-- Reutilizamos 'form-container' para agrupar los enlaces -->
+    <div class="form-container" style="margin-top: 2rem; max-width: 1100px; text-align: center;">
+        <h2 style="margin-bottom: 2rem;">Accesos Directos a Endpoints API</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
             
-            <div>
-                <label for="username">Nombre Usuario:</label>
-                <input type="text" id="username" name="username" required />
-            </div>
-            
-            <div>
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required />
-            </div>
+            <!-- Modelos Principales -->
+            <a href="/biblioteca/libros/" class="btn">Gestionar Libros</a>
+            <a href="/biblioteca/lectores/" class="btn">Gestionar Lectores</a>
+            <a href="/biblioteca/prestamos/" class="btn">Gestionar Préstamos</a>
+            <a href="/biblioteca/autores/" class="btn">Gestionar Autores</a>
 
-            <button type="submit" class="btn">Acceder</button>
-        </form>
+            <!-- Modelos Secundarios (Configuración) -->
+            <a href="/biblioteca/categorias/" class="btn btn-secondary">Admin Categorías</a>
+            <a href="/biblioteca/comunas/" class="btn btn-secondary">Admin Comunas</a>
+            <a href="/biblioteca/bibliotecas/" class="btn btn-secondary">Admin Bibliotecas</a>
+            <a href="/biblioteca/nacionalidades/" class="btn btn-secondary">Admin Nacionalidades</a>
 
-        <p><a href="{% url 'password_reset' %}">¿Olvidaste tu contraseña?</a></p>
-        <p>¿No tienes cuenta? <a href="{% url 'registro' %}">Regístrate</a></p>
+        </div>
     </div>
 {% endblock %}
