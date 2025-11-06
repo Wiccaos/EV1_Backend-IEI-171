@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     # Aplicaciones de terceros
     'rest_framework',
     'iconic',
-    'bootstrap5',
 
     # Documentación de API
     'drf_yasg',
