@@ -206,3 +206,14 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 .env
+ambiente_virtual/pyvenv.cfg
+.gitignore
+ambiente_virtual/Scripts/activate
+ambiente_virtual/Scripts/activate.bat
+ambiente_virtual/Scripts/Activate.ps1
+ambiente_virtual/Scripts/deactivate.bat
+ambiente_virtual/Scripts/pip.exe
+ambiente_virtual/Scripts/pip3.12.exe
+ambiente_virtual/Scripts/pip3.exe
+ambiente_virtual/Scripts/python.exe
+ambiente_virtual/Scripts/pythonw.exe
