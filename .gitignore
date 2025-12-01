@@ -217,3 +217,4 @@ ambiente_virtual/Scripts/pip3.12.exe
 ambiente_virtual/Scripts/pip3.exe
 ambiente_virtual/Scripts/python.exe
 ambiente_virtual/Scripts/pythonw.exe
+/ambiente_virtual
